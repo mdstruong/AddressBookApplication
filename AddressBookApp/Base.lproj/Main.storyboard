@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PD3-zL-HAn">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts Table View Controller-->
+        <scene sceneID="dq6-Ln-PIF">
+            <objects>
+                <tableViewController id="deu-F7-5pM" customClass="ContactsTableViewController" customModule="AddressBookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Q2-4S-GCv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="99" id="Jex-5g-xCM" customClass="ContactTableViewCell" customModule="AddressBookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="99"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jex-5g-xCM" id="4wh-GM-gVO">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="98"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="men" translatesAutoresizingMaskIntoConstraints="NO" id="boF-nv-q0K">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPu-Qo-VVP">
+                                            <rect key="frame" x="108" y="17" width="484" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sX9-UZ-keI">
+                                            <rect key="frame" x="108" y="54" width="484" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contactImageView" destination="boF-nv-q0K" id="THL-1Z-F9x"/>
+                                    <outlet property="contactNameLabel" destination="wPu-Qo-VVP" id="dtY-xd-yZ7"/>
+                                    <outlet property="contactPhoneLabel" destination="sX9-UZ-keI" id="HGU-jS-reK"/>
+                                    <segue destination="r2h-iD-0kE" kind="show" identifier="contactDetailSegue" id="hA7-hL-j4r"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="deu-F7-5pM" id="J91-AE-7uS"/>
+                            <outlet property="delegate" destination="deu-F7-5pM" id="fQB-tH-AIB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ONZ-Oz-BVP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7S-bd-kUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531" y="331"/>
+        </scene>
+        <!--Contact Details View Controller-->
+        <scene sceneID="HhZ-8n-uGF">
+            <objects>
+                <viewController id="r2h-iD-0kE" customClass="ContactDetailsViewController" customModule="AddressBookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zz2-5g-f1X"/>
+                        <viewControllerLayoutGuide type="bottom" id="6R8-5K-0ly"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ec0-Yt-L6Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-pH-mP1">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="bXU-LE-D4h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PD8-rx-qDH">
+                                <rect key="frame" x="20" y="101" width="280" height="290"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gt9-Ro-tM6">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="37V-Kd-baM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD8-ht-AXl">
+                                        <rect key="frame" x="0.0" y="30" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fju-ER-TxY">
+                                        <rect key="frame" x="0.0" y="60" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7u2-sT-ay3">
+                                        <rect key="frame" x="0.0" y="90" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-et-5zR">
+                                        <rect key="frame" x="0.0" y="120" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yki-Bw-M04">
+                                        <rect key="frame" x="0.0" y="150" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47f-s9-Ek7">
+                                        <rect key="frame" x="0.0" y="180" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-ar-qci">
+                                        <rect key="frame" x="0.0" y="210" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8U-p2-Ska">
+                                        <rect key="frame" x="0.0" y="240" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ssn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDY-VT-vyj">
+                                        <rect key="frame" x="0.0" y="270" width="280" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="men" translatesAutoresizingMaskIntoConstraints="NO" id="jIC-Rs-CBI">
+                                <rect key="frame" x="328" y="101" width="250" height="250"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6R8-5K-0ly" firstAttribute="top" secondItem="jIC-Rs-CBI" secondAttribute="bottom" constant="249" id="5kO-HT-IZe"/>
+                            <constraint firstItem="jIC-Rs-CBI" firstAttribute="top" secondItem="DaH-pH-mP1" secondAttribute="bottom" constant="8" id="7GT-25-cKD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jIC-Rs-CBI" secondAttribute="trailing" constant="2" id="LqA-pP-dQ7"/>
+                            <constraint firstItem="PD8-rx-qDH" firstAttribute="top" secondItem="jIC-Rs-CBI" secondAttribute="top" id="RPa-t0-OMT"/>
+                            <constraint firstItem="PD8-rx-qDH" firstAttribute="leading" secondItem="ec0-Yt-L6Y" secondAttribute="leadingMargin" id="T3Y-4I-mfr"/>
+                            <constraint firstItem="PD8-rx-qDH" firstAttribute="top" secondItem="ec0-Yt-L6Y" secondAttribute="top" constant="101" id="iUc-c3-xgy"/>
+                            <constraint firstItem="jIC-Rs-CBI" firstAttribute="leading" secondItem="PD8-rx-qDH" secondAttribute="trailing" constant="28" id="pgt-LF-N0J"/>
+                            <constraint firstItem="DaH-pH-mP1" firstAttribute="top" secondItem="zz2-5g-f1X" secondAttribute="bottom" constant="8" id="qCU-NP-7Xm"/>
+                            <constraint firstItem="DaH-pH-mP1" firstAttribute="trailing" secondItem="ec0-Yt-L6Y" secondAttribute="trailingMargin" id="sCb-Sm-S1g"/>
+                            <constraint firstItem="DaH-pH-mP1" firstAttribute="leading" secondItem="ec0-Yt-L6Y" secondAttribute="leadingMargin" id="wWe-ob-zI9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gHI-Gw-Gnj"/>
+                    <connections>
+                        <outlet property="cellLabel" destination="Y8U-p2-Ska" id="8cz-jp-pEh"/>
+                        <outlet property="cityLabel" destination="fju-ER-TxY" id="CT4-mI-hE6"/>
+                        <outlet property="dobLabel" destination="47f-s9-Ek7" id="afd-4I-rgY"/>
+                        <outlet property="emailLabel" destination="yki-Bw-M04" id="Emk-KY-eTo"/>
+                        <outlet property="genderLabel" destination="Gt9-Ro-tM6" id="VnL-Mo-rZx"/>
+                        <outlet property="imageView" destination="jIC-Rs-CBI" id="v9s-FS-Ynb"/>
+                        <outlet property="nameLabel" destination="DaH-pH-mP1" id="RAP-lb-47H"/>
+                        <outlet property="phoneLabel" destination="NNa-ar-qci" id="hGY-Ob-phk"/>
+                        <outlet property="ssnLabel" destination="NDY-VT-vyj" id="4xt-K9-KFa"/>
+                        <outlet property="stateLabel" destination="7u2-sT-ay3" id="4lW-yX-8O3"/>
+                        <outlet property="streetlabel" destination="lD8-ht-AXl" id="vy6-Qe-Dpf"/>
+                        <outlet property="zipLabel" destination="Q9f-et-5zR" id="mOO-Vn-iYx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9q-sq-Xxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904" y="331"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZSJ-I0-Wur">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PD3-zL-HAn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mbk-ZW-3sA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="deu-F7-5pM" kind="relationship" relationship="rootViewController" id="pdU-gt-DyA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJl-sC-GDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-141" y="331"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M8t-nn-Zf1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pUb-ZA-JJJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8kJ-pN-mxn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="r2h-iD-0kE" kind="relationship" relationship="rootViewController" id="dnG-g6-t5e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DXD-N0-2ea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="331"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="men" width="80" height="80"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hA7-hL-j4r"/>
+    </inferredMetricsTieBreakers>
+</document>
