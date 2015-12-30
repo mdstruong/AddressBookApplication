@@ -54,7 +54,13 @@ class ContactsTableViewController: UITableViewController {
         // Fetches the appropriate product for the data source layout.
         let contact = contactViewModel.contactForItemAtIndexPath(indexPath)
         cell.contactNameLabel.text = contact.first.capitalizedString + " " + contact.last.capitalizedString
-        cell.contactImageView.image = UIImage(named: "men")
+       // cell.contactImageView.image = UIImage(named: "men")
+        let urlString = contact.pictureMedium
+        if let url = NSURL(string: urlString) {
+            if let data = NSData(contentsOfURL: url) {
+                cell.contactImageView.image = UIImage(data: data)
+            }
+        }
         cell.contactPhoneLabel.text = contact.phone
         self.navigationItem.title = "Contact List"
 
