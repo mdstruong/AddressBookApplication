@@ -53,9 +53,24 @@ class ContactDetailsViewController: UIViewController {
         cellLabel.text = "Cell: "+contact.cell
         ssnLabel.text = "SSN: "+contact.ssn
         self.navigationItem.title = contact.first.capitalizedString + " " + contact.last.capitalizedString
+        let urlString = contact.pictureMedium
+        if let url = NSURL(string: urlString) {
+            if let data = NSData(contentsOfURL: url) {
+                imageView.image = UIImage(data: data)
+            }
+        }
         
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+//        let urlString = contact.pictureMedium
+//        if let url = NSURL(string: urlString) {
+//            if let data = NSData(contentsOfURL: url) {
+//                imageView.image = UIImage(data: data)
+//            }
+//        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
