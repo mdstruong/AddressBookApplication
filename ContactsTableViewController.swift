@@ -120,6 +120,21 @@ class ContactsTableViewController: UITableViewController {
             
         }
     }
+    @IBAction func unwindToContactList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? ContactDetailsViewController, contact = sourceViewController.contact {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                contactViewModel.contacts[selectedIndexPath.row] = contact
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
+            else {
+                // Add a new contact.
+                let newIndexPath = NSIndexPath(forRow: contactViewModel.contacts.count, inSection: 0)
+                contactViewModel.contacts.append(contact)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+        }
+    }
 
 
 }
