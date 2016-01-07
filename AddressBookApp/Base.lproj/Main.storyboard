@@ -165,7 +165,9 @@
                             <constraint firstItem="DaH-pH-mP1" firstAttribute="leading" secondItem="ec0-Yt-L6Y" secondAttribute="leadingMargin" id="wWe-ob-zI9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gHI-Gw-Gnj"/>
+                    <navigationItem key="navigationItem" id="gHI-Gw-Gnj">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="4Xy-Bx-pCq"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cellLabel" destination="Y8U-p2-Ska" id="8cz-jp-pEh"/>
                         <outlet property="cityLabel" destination="fju-ER-TxY" id="CT4-mI-hE6"/>
@@ -175,6 +177,7 @@
                         <outlet property="imageView" destination="jIC-Rs-CBI" id="v9s-FS-Ynb"/>
                         <outlet property="nameLabel" destination="DaH-pH-mP1" id="RAP-lb-47H"/>
                         <outlet property="phoneLabel" destination="NNa-ar-qci" id="hGY-Ob-phk"/>
+                        <outlet property="saveButton" destination="4Xy-Bx-pCq" id="dNj-uL-iSB"/>
                         <outlet property="ssnLabel" destination="NDY-VT-vyj" id="4xt-K9-KFa"/>
                         <outlet property="stateLabel" destination="7u2-sT-ay3" id="4lW-yX-8O3"/>
                         <outlet property="streetlabel" destination="lD8-ht-AXl" id="vy6-Qe-Dpf"/>
